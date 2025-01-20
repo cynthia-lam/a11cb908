@@ -91,7 +91,7 @@ const CallList = ({ filter }) => {
     <div>
       <button onClick={archiveAll}>{filter === 'ActivityFeed' ? 'ARCHIVE ALL' : 'UNARCHIVE ALL'}</button>
       <ul>
-        <button onClick={resetAll}>RESET</button>
+        {/* <button onClick={resetAll}>RESET</button> */}
         {filteredCalls.map((call) => (
           <Call data={call} key={call.id} fetchCalls={fetchData} toggleArchive={toggleArchive} />
         ))}
