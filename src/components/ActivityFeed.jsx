@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import fetchCalls from '../../routes/useCalls';
+import Call from './Call.jsx';
 
 const ActivityFeed = () => {
   const [calls, setCalls] = useState([]);
@@ -8,7 +9,6 @@ const ActivityFeed = () => {
     const fetchData = async () => {
         const data = await fetchCalls();
         setCalls(data);
-        setLoading(false);
     };
 
     fetchData();
@@ -18,12 +18,7 @@ const ActivityFeed = () => {
     <div>
       <ul>
         {calls.map((call) => (
-          <li key={call.id}>
-            {call.from}
-            {call.direction}
-            {call.duration}
-            {call.call_type}
-          </li>
+          <Call data={call} key={call.id}/>
         ))}
       </ul>
     </div>
