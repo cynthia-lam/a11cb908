@@ -22,8 +22,18 @@ const Header = (props) => {
         </svg>
       </div>
       <div className='nav-links'>
-        <div className={`nav-link ${props.activeTab === 'ActivityFeed' ? 'active' : ''}`} onClick={() => props.setActiveTab('ActivityFeed')}>Activity Feed</div>
-        <div className={`nav-link ${props.activeTab === 'Archive' ? 'active' : ''}`} onClick={() => props.setActiveTab('Archive')}>Archive</div>
+        <div
+          className={`nav-link ${props.activeTab === 'ActivityFeed' ? 'active' : ''}`}
+          onClick={() => props.setActiveTab('ActivityFeed')}
+        >
+          Activity Feed
+        </div>
+        <div
+          className={`nav-link ${props.activeTab === 'Archive' ? 'active' : ''}`}
+          onClick={() => props.setActiveTab('Archive')}
+        >
+          Archive
+        </div>
       </div>
     </header>
   );

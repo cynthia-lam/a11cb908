@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div className='container'>
-      <Header setActiveTab={setActiveTab} />
+      <Header activeTab={activeTab} setActiveTab={setActiveTab} />
       {display()}
     </div>
   );
