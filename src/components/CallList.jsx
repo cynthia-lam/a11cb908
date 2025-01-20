@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import fetchCalls from '../../routes/useCalls.js';
 import Call from './Call.jsx';
+import '../css/callList.css';
 
 const CallList = ({ filter }) => {
   const [calls, setCalls] = useState([]);
@@ -88,7 +89,7 @@ const CallList = ({ filter }) => {
   });
 
   return (
-    <div>
+    <div className='call-list'>
       <button onClick={archiveAll}>{filter === 'ActivityFeed' ? 'ARCHIVE ALL' : 'UNARCHIVE ALL'}</button>
       <ul>
         {/* <button onClick={resetAll}>RESET</button> */}

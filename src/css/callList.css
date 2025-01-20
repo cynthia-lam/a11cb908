@@ -1,0 +1,16 @@
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(128, 128, 128, 0.123);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2bc420a9;
+}
+
+.call-list {
+  height: 586px;
+  overflow-y: auto;
+}

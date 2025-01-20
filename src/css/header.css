@@ -4,6 +4,7 @@
   align-items: center;
   padding-left: 2em;
   padding-right: 2em;
+  z-index: 99999999;
 }
 
 header {
