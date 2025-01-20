@@ -14,17 +14,16 @@ const CallList = ({ filter }) => {
     fetchData();
   }, []); // dependencies - just empty array
 
-  // convert filter to is_archived
-  console.log('filter: ', filter);
-  let filteredCalls = calls;
-  if (filter == 'ActivityFeed') {
-    filteredCalls = calls.filter((call) => call.is_archived == false);
-  };
-  if (filter == 'Archive') {
-    filteredCalls = calls.filter((call) => call.is_archived == true);
-  };
+  // get calls filtered by filter aka activeTab
+  const filteredCalls = calls.filter((call) => {
+    if (filter === 'ActivityFeed') {
+      return !call.is_archived; // non-archived calls
+    }
+    if (filter === 'Archive') {
+      return call.is_archived; // archived calls
+    }
+  });
 
-  console.log('filteredCalls: ', filteredCalls);
   return (
     <div>
       <ul>

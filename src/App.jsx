@@ -5,7 +5,7 @@ import Header from './Header.jsx';
 import CallList from './components/CallList.jsx';
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState('Archive');
+  const [activeTab, setActiveTab] = useState('ActivityFeed');
 
   function display() {
     if (activeTab === 'ActivityFeed') {
