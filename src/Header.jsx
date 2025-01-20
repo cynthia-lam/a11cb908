@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/header.css';
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className='header'>
       <div className='nav-logo'>
@@ -22,8 +22,8 @@ const Header = () => {
         </svg>
       </div>
       <div className='nav-links'>
-        <div className='nav-link-active activity-feed'>Activity Feed</div>
-        <div className='nav-link archive'>Archive</div>
+        <div className={`nav-link ${props.activeTab === 'ActivityFeed' ? 'active' : ''}`} onClick={() => props.setActiveTab('ActivityFeed')}>Activity Feed</div>
+        <div className={`nav-link ${props.activeTab === 'Archive' ? 'active' : ''}`} onClick={() => props.setActiveTab('Archive')}>Archive</div>
       </div>
     </header>
   );
