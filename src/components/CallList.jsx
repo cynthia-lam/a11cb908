@@ -28,7 +28,7 @@ const CallList = ({ filter }) => {
     <div>
       <ul>
         {filteredCalls.map((call) => (
-          <Call data={call} key={call.id} />
+          <Call data={call} key={call.id} fetchCalls={fetchCalls}/>
         ))}
       </ul>
     </div>
