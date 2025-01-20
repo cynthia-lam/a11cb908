@@ -5,16 +5,16 @@ import Call from './Call.jsx';
 const CallList = ({ filter }) => {
   const [calls, setCalls] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchCalls();
-      setCalls(data);
-    };
+  const fetchData = async () => {
+    const data = await fetchCalls();
+    setCalls(data);
+  };
 
+  useEffect(() => {
     fetchData();
   }, []); // dependencies - just empty array
 
-  // get calls filtered by filter aka activeTab
+  // get calls filtered by filter prop
   const filteredCalls = calls.filter((call) => {
     if (filter === 'ActivityFeed') {
       return !call.is_archived; // non-archived calls
@@ -28,7 +28,7 @@ const CallList = ({ filter }) => {
     <div>
       <ul>
         {filteredCalls.map((call) => (
-          <Call data={call} key={call.id} fetchCalls={fetchCalls}/>
+          <Call data={call} key={call.id} fetchCalls={fetchData}/>
         ))}
       </ul>
     </div>

@@ -18,12 +18,15 @@ const Call = ({ data, fetchCalls }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        is_archived: !is_archived,
+        is_archived: !is_archived, // PATCH this here!
       }),
     });
 
-      const updatedData = await response.json();
-      fetchCalls();  // refresh the page
+      if (response.ok) {
+        fetchCalls();  // refresh CallList
+      } else {
+        console.error('Failed to toggle archive');
+      }
   };
 
   return (
