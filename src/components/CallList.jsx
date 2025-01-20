@@ -15,9 +15,8 @@ const CallList = ({ filter }) => {
   }, []); // dependencies - just empty array
   
   const toggleArchive = async (id, is_archived) => {
-    // e.stopPropagation();  // Prevents modal from opening when clicking archive button
-    
-    const response = await fetch(`https://aircall-api.onrender.com/activities/${id}`, {
+    const baseURL = 'https://aircall-api.onrender.com';
+    const response = await fetch(`${baseURL}/activities/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
