@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from "./Modal.jsx";
+import '../css/call.css';
 
 const Call = ({ data, toggleArchive }) => {
   const { id, created_at, direction, from, to, via, duration, is_archived, call_type } = data;
