@@ -41,7 +41,7 @@ const CallList = ({ filter }) => {
       const newArchiveStatus = filter === 'ActivityFeed';
 
       const archivePromises = filteredCalls.map((call) =>
-        fetch(`https://aircall-api.onrender.com/activities/${call.id}`, {
+        fetch(`${baseURL}/activities/${call.id}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -59,6 +59,24 @@ const CallList = ({ filter }) => {
     }
   };
 
+  // Reset all calls to initial state
+  const resetAll = async () => {
+    try {
+      const response = await fetch (`${baseURL}/reset`, {
+        method: 'PATCH'
+      })
+      if (response.ok) {
+        console.log("Calls successfully reset!");
+        fetchData();
+      } else {
+        console.log("Calls were not reset.");
+      }
+    } catch (error) {
+      console.log('Error reseting calls: ', error);
+      
+    }
+  };
+
   // Get calls filtered by filter prop
   const filteredCalls = calls.filter((call) => {
     if (filter === 'ActivityFeed') {
@@ -73,6 +91,7 @@ const CallList = ({ filter }) => {
     <div>
       <button onClick={archiveAll}>{filter === 'ActivityFeed' ? 'ARCHIVE ALL' : 'UNARCHIVE ALL'}</button>
       <ul>
+        <button onClick={resetAll}>RESET</button>
         {filteredCalls.map((call) => (
           <Call data={call} key={call.id} fetchCalls={fetchData} toggleArchive={toggleArchive} />
         ))}
