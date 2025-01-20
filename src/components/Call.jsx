@@ -1,32 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Modal from "./Modal.jsx";
 
-const Call = ({ data, fetchCalls }) => {
+const Call = ({ data, toggleArchive }) => {
   const { id, created_at, direction, from, to, via, duration, is_archived, call_type } = data;
   const [modalOpen, setModalOpen] = useState(false);
 
-  const toggleModal = () => {
+  const toggleModal = (e) => {
+    e.stopPropagation();
     setModalOpen(!modalOpen);
   };
 
-  const toggleArchive = async (e) => {
-    e.stopPropagation();  // Prevents modal from opening when clicking archive button
-
-    const response = await fetch(`https://aircall-api.onrender.com/activities/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        is_archived: !is_archived, // PATCH this here!
-      }),
-    });
-
-      if (response.ok) {
-        fetchCalls();  // refresh CallList
-      } else {
-        console.error('Failed to toggle archive');
-      }
+  const handleToggleArchive = (e) => {
+    e.stopPropagation();
+    toggleArchive(id, is_archived);
   };
 
   return (
@@ -34,12 +20,13 @@ const Call = ({ data, fetchCalls }) => {
       {call_type} call from {from}
       {direction}
       {duration}
-      <button 
-      onClick={toggleModal}>
-          DETAILS
+      is it archived? {is_archived}
+      <button
+        onClick={toggleModal}>
+        DETAILS
       </button>
       <button
-        onClick={toggleArchive}>
+        onClick={handleToggleArchive}>
         {is_archived ? 'UNARCHIVE' : 'ARCHIVE'}
       </button>
       <Modal isOpen={modalOpen} toggleModal={toggleModal}>
