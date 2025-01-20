@@ -2,12 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './Header.jsx';
+import ActivityFeed from './components/ActivityFeed.jsx';
+import Archive from './components/Archive.jsx';
 
 const App = () => {
+  function display() {
+    if (true) {
+      return(
+      <ActivityFeed/>
+      );
+    } else {
+      return(
+      <Archive/>
+      );
+    }
+  }
+
   return (
     <div className='container'>
       <Header/>
-      <div className="container-view">Some activities should be here</div>
+      {display()}
     </div>
   );
 };
