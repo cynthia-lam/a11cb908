@@ -4,7 +4,9 @@ import Call from './Call.jsx';
 
 const CallList = ({ filter }) => {
   const [calls, setCalls] = useState([]);
+  const baseURL = 'https://aircall-api.onrender.com';
 
+  // FetchData gets the calls from the API and updates the state
   const fetchData = async () => {
     const data = await fetchCalls();
     setCalls(data);
@@ -12,10 +14,10 @@ const CallList = ({ filter }) => {
 
   useEffect(() => {
     fetchData();
-  }, []); // dependencies - just empty array
-  
+  }, []);
+
+  // ToggleArchive archives or unarchives a call
   const toggleArchive = async (id, is_archived) => {
-    const baseURL = 'https://aircall-api.onrender.com';
     const response = await fetch(`${baseURL}/activities/${id}`, {
       method: 'PATCH',
       headers: {
@@ -25,24 +27,15 @@ const CallList = ({ filter }) => {
         is_archived: !is_archived, // PATCH this here!
       }),
     });
-    
+
     if (response.ok) {
       fetchData();  // refresh CallList
     } else {
       console.error('Failed to toggle archive');
     }
   };
-  
-    // get calls filtered by filter prop
-    const filteredCalls = calls.filter((call) => {
-      if (filter === 'ActivityFeed') {
-        return !call.is_archived; // non-archived calls
-      }
-      if (filter === 'Archive') {
-        return call.is_archived; // archived calls
-      }
-    });
 
+  // ArchiveAll archives or unarchives all calls
   const archiveAll = async () => {
     try {
       const newArchiveStatus = filter === 'ActivityFeed';
@@ -54,7 +47,7 @@ const CallList = ({ filter }) => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            is_archived: newArchiveStatus, // what to PATCH
+            is_archived: newArchiveStatus, // PATCH this here!
           }),
         })
       );
@@ -66,12 +59,22 @@ const CallList = ({ filter }) => {
     }
   };
 
+  // Get calls filtered by filter prop
+  const filteredCalls = calls.filter((call) => {
+    if (filter === 'ActivityFeed') {
+      return !call.is_archived; // non-archived calls
+    }
+    if (filter === 'Archive') {
+      return call.is_archived; // archived calls
+    }
+  });
+
   return (
     <div>
       <button onClick={archiveAll}>{filter === 'ActivityFeed' ? 'ARCHIVE ALL' : 'UNARCHIVE ALL'}</button>
       <ul>
         {filteredCalls.map((call) => (
-          <Call data={call} key={call.id} fetchCalls={fetchData} toggleArchive={toggleArchive}/>
+          <Call data={call} key={call.id} fetchCalls={fetchData} toggleArchive={toggleArchive} />
         ))}
       </ul>
     </div>
