@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './Header.jsx';
@@ -6,21 +6,23 @@ import ActivityFeed from './components/ActivityFeed.jsx';
 import Archive from './components/Archive.jsx';
 
 const App = () => {
+  const [activeTab, setActiveTab] = useState('Archive');
+
   function display() {
-    if (true) {
+    if (activeTab === 'ActivityFeed') {
       return(
       <ActivityFeed/>
       );
-    } else {
+    } else if (activeTab === 'Archive'){
       return(
       <Archive/>
       );
     }
-  }
+  };
 
   return (
     <div className='container'>
-      <Header/>
+      <Header setActiveTab={setActiveTab}/>
       {display()}
     </div>
   );
