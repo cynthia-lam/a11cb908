@@ -16,14 +16,18 @@ const Call = ({ data, toggleArchive }) => {
     toggleArchive(id, is_archived);
   };
 
+  const displayCallType = () => {
+    if (call_type === 'missed') return <img src='src/assets/missed-call.png' className='call-type-logo' />;
+    if (call_type === 'answered') return <img src='src/assets/answered-call.png' className='call-type-logo' />;
+    if (call_type === 'voicemail') return <img src='src/assets/voicemail-call.png' className='call-type-logo' />;
+  }
+
   return (
     <li onClick={toggleModal} className='call'>
       <div className='call-info-container'>
         <div className='call-info-top'>
           <div className='call-type'>
-            {call_type === 'missed' && <img src='src/assets/missed-call.png' className='call-type-logo' />}
-            {call_type === 'answered' && <img src='src/assets/answered-call.png' className='call-type-logo' />}
-            {call_type === 'voicemail' && <img src='src/assets/voicemail-call.png' className='call-type-logo' />}
+            {displayCallType()}
           </div>
           <div className='call-to-from'>
             {direction === 'inbound' && <span>from</span>}
@@ -48,15 +52,16 @@ const Call = ({ data, toggleArchive }) => {
 
       <Modal isOpen={modalOpen} toggleModal={toggleModal} className='modal'>
         <div className='modal-button-container'>
+        <div>{displayCallType()}</div>
           <button onClick={toggleModal} className='modal-button'>X</button>
         </div>
         <br/>
         <div className='modal-children'>
+          
           <div>#{id}</div>
           <div>{created_at.slice(0, 10)} | {`${Math.floor(duration / 60)}m ${duration % 60}s`}</div>
           <div>{direction.charAt(0).toUpperCase() + direction.slice(1)} call with {from} </div>
           <div>Aircall number: {via}</div>
-          <div>Call Type: {call_type}</div>
         </div>
       </Modal>
     </li>
