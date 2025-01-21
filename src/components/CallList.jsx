@@ -9,8 +9,12 @@ const CallList = ({ filter }) => {
 
   // FetchData gets the calls from the API and updates the state
   const fetchData = async () => {
-    const data = await fetchCalls();
-    setCalls(data);
+    try {
+      const data = await fetchCalls();
+      setCalls(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   useEffect(() => {
