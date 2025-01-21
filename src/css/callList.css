@@ -12,6 +12,7 @@
 
 .call-list-content{
   overflow-y: scroll;
+  height: 586px;
 }
 
 .call-list {
