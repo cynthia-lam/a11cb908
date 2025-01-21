@@ -24,6 +24,28 @@
 
 
 .archive-all-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   margin-top: 16px;
   margin-right: 17px;
+
+  border: .5px;
+  border-style: solid;
+  border-color: rgb(185, 185, 185);
+  border-radius: 5px;
+
+  background: none;
+  font-family: "Afacad Flux";
+}
+
+.archive-all-button:hover {
+  background-color: rgba(187, 187, 187, 0.141);
+}
+
+.call-action-all-logo {
+  width: 22px;
+  height: auto;
+  opacity: .6;
 }

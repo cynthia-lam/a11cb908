@@ -91,7 +91,21 @@ const CallList = ({ filter }) => {
   return (
     <div className='call-list'>
       <div className='call-list-top'>
-        <button className='archive-all-button' onClick={archiveAll}>{filter === 'ActivityFeed' ? 'ARCHIVE ALL' : 'UNARCHIVE ALL'}</button>
+        <button
+          className='archive-all-button'
+          onClick={archiveAll}>
+          {filter === 'ActivityFeed' ?
+            <>
+              <img src="src/assets/archive.png" className="call-action-all-logo" />
+              ALL
+            </>
+            :
+            <>
+              <img src="src/assets/unarchive.png" className="call-action-all-logo" />
+              ALL
+            </>
+          }
+        </button>
       </div>
       <div className='call-list-bottom'>
         <ul>
