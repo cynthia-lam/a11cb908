@@ -52,14 +52,10 @@ const Call = ({ data, toggleArchive }) => {
         </div>
         <br/>
         <div className='modal-children'>
-          <div>ID: {id}</div>
-          <div>Created At: {created_at}</div>
-          <div>Direction: {direction}</div>
-          <div>From: {from}</div>
-          <div>To: {to}</div>
-          <div>Via: {via}</div>
-          <div>Duration: {duration}</div>
-          <div>Is Archived: {is_archived ? 'Yes' : 'No'}</div>
+          <div>#{id}</div>
+          <div>{created_at.slice(0, 10)} | {`${Math.floor(duration / 60)}m ${duration % 60}s`}</div>
+          <div>{direction.charAt(0).toUpperCase() + direction.slice(1)} call with {from} </div>
+          <div>Aircall number: {via}</div>
           <div>Call Type: {call_type}</div>
         </div>
       </Modal>
