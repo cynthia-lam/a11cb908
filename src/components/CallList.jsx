@@ -133,7 +133,7 @@ const CallList = ({ filter }) => {
       )}
     </div>
       <div className='footer'>
-          <img src='/assets/answered-call.png' className='footer-icon'/>
+          <img src={`${process.env.PUBLIC_URL}/../src/assets/answered-call.png`} className='footer-icon'/>
           <img src='/assets/foot-icon-2.png' className='footer-icon'/>
           <img src='/assets/foot-icon-3.png' className='footer-icon'/>
           <img src='/assets/foot-icon-4.png' className='footer-icon'/>
