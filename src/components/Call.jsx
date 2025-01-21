@@ -59,13 +59,18 @@ const Call = ({ data, toggleArchive }) => {
         </div>
         <br />
         <div className='modal-children'>
-
-          <div className='call-id'>#{id}</div>
-          <br/>
+          <div className='modal-children-top'>
+          <img src='src/assets/foot-icon-2.png' className='modal-person-icon'></img>
+          <span className='modal-from-name'>
+            {from}
+          </span>
+          </div>
           <div>Call on {created_at.slice(0, 10)} lasted for {`${Math.floor(duration / 60)}m ${duration % 60}s`}</div>
-          <br/>
-          <div>{direction.charAt(0).toUpperCase() + direction.slice(1)} call with {from} </div>
+          <br />
+          <div>{direction.charAt(0).toUpperCase() + direction.slice(1)}</div>
           <div>Aircall number: {via}</div>
+          <br />
+          <div className='call-id'>#{id}</div>
         </div>
       </Modal>
     </li>

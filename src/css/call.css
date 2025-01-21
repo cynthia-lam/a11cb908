@@ -112,3 +112,18 @@
 .modal-children {
   display: grid;
 }
+
+.modal-children-top{
+display: flex;
+}
+
+.modal-person-icon {
+  width: 20px;
+  height: auto;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+.modal-from-name {
+  font-weight: bold;
+}
