@@ -17,9 +17,9 @@ const Call = ({ data, toggleArchive }) => {
   };
 
   const displayCallType = () => {
-    if (call_type === 'missed') return <img src='public/assets/missed-call.png' className='call-type-logo' />;
-    if (call_type === 'answered') return <img src='public/assets/answered-call.png' className='call-type-logo' />;
-    if (call_type === 'voicemail') return <img src='public/assets/voicemail-call.png' className='call-type-logo' />;
+    if (call_type === 'missed') return <img src='/assets/missed-call.png' className='call-type-logo' />;
+    if (call_type === 'answered') return <img src='/assets/answered-call.png' className='call-type-logo' />;
+    if (call_type === 'voicemail') return <img src='/assets/voicemail-call.png' className='call-type-logo' />;
   };
 
   return (
@@ -42,11 +42,11 @@ const Call = ({ data, toggleArchive }) => {
       </div>
 
       <div className='actions-container'>
-        <button onClick={toggleModal} className='call-action-button'><img src='public/assets/details.png' className='call-action-logo' /></button>
+        <button onClick={toggleModal} className='call-action-button'><img src='/assets/details.png' className='call-action-logo' /></button>
         <button onClick={handleToggleArchive} className='call-action-button'>
           {is_archived ?
-            <img src='public/assets/unarchive.png' className='call-action-logo' /> :
-            <img src='public/assets/archive.png' className='call-action-logo' />}
+            <img src='/assets/unarchive.png' className='call-action-logo' /> :
+            <img src='/assets/archive.png' className='call-action-logo' />}
         </button>
       </div>
 
@@ -60,7 +60,7 @@ const Call = ({ data, toggleArchive }) => {
         <br />
         <div className='modal-children'>
           <div className='modal-children-top'>
-          <img src='public/assets/foot-icon-2.png' className='modal-person-icon'></img>
+          <img src='/assets/foot-icon-2.png' className='modal-person-icon'></img>
           <span className='modal-from-name'>
             {from}
           </span>
