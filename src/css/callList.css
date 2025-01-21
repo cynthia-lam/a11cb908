@@ -10,18 +10,44 @@
   background: #2bc420a9;
 }
 
+.call-list-content{
+  overflow-y: scroll;
+}
+
 .call-list {
   display: flex;
   flex-direction: column;
   height: 586px;
-  overflow-y: scroll;
+
+  z-index: 1;
+  position: relative;
 }
 
 .call-list-top {
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5px;
+
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: white;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: 1px solid #ddd;
 }
 
+.footer {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  background-color: white; 
+  padding: 10px; 
+  border-bottom: 1px solid #ddd;
+}
 
 .archive-all-button {
   display: flex;
@@ -42,6 +68,24 @@
 
 .archive-all-button:hover {
   background-color: rgba(187, 187, 187, 0.141);
+}
+
+.scroll-top-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 21px;
+  width: auto;
+
+  margin-top: 16px;
+  margin-right: 17px;
+  padding-left: 10px;
+
+  background: none;
+  font-family: "Afacad Flux";
+
+  opacity: .75;
 }
 
 .call-action-all-logo {

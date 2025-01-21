@@ -91,6 +91,7 @@ const CallList = ({ filter }) => {
   return (
     <div className='call-list'>
       <div className='call-list-top'>
+        <img src='src/assets/scroll-top.png' className="scroll-top-button"></img>
         <button
           className='archive-all-button'
           onClick={archiveAll}>
@@ -107,13 +108,16 @@ const CallList = ({ filter }) => {
           }
         </button>
       </div>
-      <div className='call-list-bottom'>
+      <div className='call-list-content'>
         <ul>
           {/* <button onClick={resetAll}>RESET</button> */}
           {filteredCalls.map((call) => (
             <Call data={call} key={call.id} fetchCalls={fetchData} toggleArchive={toggleArchive} />
           ))}
         </ul>
+      </div>
+      <div className='footer'>
+          FEETS
       </div>
     </div>
   );
