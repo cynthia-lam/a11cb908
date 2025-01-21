@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   padding-left: 2em;
-  padding-right: 2em;
+  padding-right: -2em;
   z-index: 99999999;
 }
 
@@ -31,14 +31,29 @@ header svg {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  height: 81px;
+  width: 120px;
+
+  --p: 70px;
+  aspect-ratio: 1;
+  clip-path: polygon(var(--p) 0,100% 0,100% 100%,0 100%);
+  background: #55555531;
+  padding-left: 60px;
+  padding-right: 51px;
 }
+
+/* .nav-right {
+  height: 81px;
+  width: 100px;
+  background: #55555531;
+  transform: skew(340deg);
+} */
 
 .nav-link {
   font-family: "Afacad Flux", serif;
   font-size: larger;
   padding: 1em 1em 1em 1em;
-
-
 }
 
 .active {
@@ -47,8 +62,3 @@ header svg {
   text-decoration: underline;
   text-decoration-color: #2ac420;
 }
-
-/*
-default:
-
-*/
