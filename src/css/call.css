@@ -1,6 +1,6 @@
 .call {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
 
   height: 4em;
@@ -18,6 +18,21 @@
 
 .call-info-container {
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 70%;
+}
+
+.call-info-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.call-info-bottom {
+  display: flex;
   justify-content: flex-start;
   align-items: center;
 }
@@ -27,8 +42,21 @@
   height: auto;
 }
 
-.buttons-container {
+.call-action-logo {
+  width: 22px;
+  height: auto;
+  opacity: .6;
+}
+
+.call-action-button {
+  border: none;
+  background: none;
+}
+
+.actions-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  width: 30%;
 }

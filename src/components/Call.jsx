@@ -19,27 +19,34 @@ const Call = ({ data, toggleArchive }) => {
   return (
     <li onClick={toggleModal} className='call'>
       <div className='call-info-container'>
-        <div className='call-type'>
-          {call_type === 'missed' && <img src='src/assets/missed-call.png' className='call-type-logo'></img>}
-          {call_type === 'answered' && <img src='src/assets/answered-call.png' className='call-type-logo'></img>}
-          {call_type === 'voicemail' && <img src='src/assets/voicemail-call.png' className='call-type-logo'></img>}
+        <div className='call-info-top'>
+          <div className='call-type'>
+            {call_type === 'missed' && <img src='src/assets/missed-call.png' className='call-type-logo' />}
+            {call_type === 'answered' && <img src='src/assets/answered-call.png' className='call-type-logo' />}
+            {call_type === 'voicemail' && <img src='src/assets/voicemail-call.png' className='call-type-logo' />}
+          </div>
+          <div className='call-direction'>
+            {direction === 'inbound' && <span>from</span>}
+            {direction === 'outbound' && <span>to</span>}
+          </div>
+          <div className='call-to'>
+            {to}
+          </div>
         </div>
-        <div className='call-direction'>
-          {direction === 'inbound' && <span>from</span>}
-          {direction === 'outbound' && <span>to</span>}
-        </div>
-        <div className='call-to'>
-          {to}
-        </div>
-        <div className='call-duration'>
-        Duration: {`${Math.floor(duration/60)}m ${duration%60}s`}
+        <div className='call-info-bottom'>
+          <div className='call-duration'>
+            Duration: {`${Math.floor(duration / 60)}m ${duration % 60}s`}
+          </div>
         </div>
       </div>
 
-      <div className='buttons-container'>
-        <button onClick={toggleModal}>DETAILS</button>
-        |
-        <button onClick={handleToggleArchive}>{is_archived ? 'UNARCHIVE' : 'ARCHIVE'}</button>
+      <div className='actions-container'>
+        <button onClick={toggleModal} className='call-action-button'><img src='src/assets/details.png' className='call-action-logo' /></button>
+        <button onClick={handleToggleArchive} className='call-action-button'>
+          {is_archived ?
+            <img src='src/assets/unarchive.png' className='call-action-logo' /> :
+            <img src='src/assets/archive.png' className='call-action-logo' />}
+        </button>
       </div>
 
       <Modal isOpen={modalOpen} toggleModal={toggleModal}>
