@@ -117,7 +117,7 @@ const CallList = ({ filter }) => {
         </ul>
       </div>
       <div className='footer'>
-          FEETS
+          {/* insert 5 images here */}
       </div>
     </div>
   );
