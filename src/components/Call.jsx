@@ -31,8 +31,8 @@ const Call = ({ data, toggleArchive }) => {
           </div>
         </div>
         <div className='call-info-bottom'>
-          <div className='call-duration'>
-            Duration: {`${Math.floor(duration / 60)}m ${duration % 60}s`}
+          <div className='call-timing'>
+            {created_at.slice(0, 10)} | {`${Math.floor(duration / 60)}m ${duration % 60}s`}
           </div>
         </div>
       </div>
