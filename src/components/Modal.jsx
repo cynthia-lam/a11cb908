@@ -14,6 +14,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        zIndex: 1000
       }}
     >
       <div
