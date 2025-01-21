@@ -32,7 +32,7 @@ const Call = ({ data, toggleArchive }) => {
           {to}
         </div>
         <div className='call-duration'>
-        Duration: {duration}
+        Duration: {`${Math.floor(duration/60)}m ${duration%60}s`}
         </div>
       </div>
 
