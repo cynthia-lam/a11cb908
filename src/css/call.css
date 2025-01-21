@@ -47,6 +47,7 @@
 .call-type-logo {
   width: 36px;
   height: auto;
+  padding-right: 10px;
 }
 
 .call-action-logo {
@@ -62,6 +63,10 @@
 
 .call-action-logo:hover {
   opacity: 1;
+}
+
+.call-id {
+  color: grey;
 }
 
 .actions-container {

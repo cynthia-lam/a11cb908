@@ -60,8 +60,10 @@ const Call = ({ data, toggleArchive }) => {
         <br />
         <div className='modal-children'>
 
-          <div>#{id}</div>
-          <div>{created_at.slice(0, 10)} | {`${Math.floor(duration / 60)}m ${duration % 60}s`}</div>
+          <div className='call-id'>#{id}</div>
+          <br/>
+          <div>Call on {created_at.slice(0, 10)} lasted for {`${Math.floor(duration / 60)}m ${duration % 60}s`}</div>
+          <br/>
           <div>{direction.charAt(0).toUpperCase() + direction.slice(1)} call with {from} </div>
           <div>Aircall number: {via}</div>
         </div>
