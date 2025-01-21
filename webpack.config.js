@@ -29,6 +29,19 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]', // You can customize the naming convention for the files
+              outputPath: 'assets/', // This will place the images in the 'assets' folder inside the 'build' folder
+              publicPath: 'assets/', // This ensures that the correct public URL is used in the final output
+            }
+          }
+        ]
       }
     ]
   },

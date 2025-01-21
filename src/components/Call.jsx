@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Modal from "./Modal.jsx";
 import '../css/call.css';
 
-// assets
-import answeredCallIcon from '../assets/answered-call.png';
-
 const Call = ({ data, toggleArchive }) => {
   const { id, created_at, direction, from, to, via, duration, is_archived, call_type } = data;
   const [modalOpen, setModalOpen] = useState(false);
@@ -21,7 +18,7 @@ const Call = ({ data, toggleArchive }) => {
 
   const displayCallType = () => {
     if (call_type === 'missed') return <img src='/assets/missed-call.png' className='call-type-logo' />;
-    if (call_type === 'answered') return <img src={answeredCallIcon} className='call-type-logo' />;
+    if (call_type === 'answered') return <img src='/assets/answered-call.png' className='call-type-logo' />;
     if (call_type === 'voicemail') return <img src='/assets/voicemail-call.png' className='call-type-logo' />;
   };
 
