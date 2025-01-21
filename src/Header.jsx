@@ -26,7 +26,7 @@ const Header = (props) => {
           className={`nav-link ${props.activeTab === 'ActivityFeed' ? 'active' : ''}`}
           onClick={() => props.setActiveTab('ActivityFeed')}
         >
-          Activity Feed
+          Recents
         </div>
         <div
           className={`nav-link ${props.activeTab === 'Archive' ? 'active' : ''}`}
