@@ -54,6 +54,8 @@
   
   background: none;
   font-family: "Afacad Flux";
+
+  cursor: pointer;
 }
 
 .archive-all-button:hover {
@@ -76,6 +78,7 @@
   font-family: "Afacad Flux";
   
   opacity: .75;
+  cursor: pointer;
 }
 
 .call-action-all-logo {

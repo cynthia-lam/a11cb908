@@ -17,6 +17,7 @@
   font-size: medium;
 
   list-style-type: none;
+  cursor: pointer;
 }
 
 .call:hover {
@@ -59,6 +60,7 @@
 .call-action-button {
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .call-action-logo:hover {

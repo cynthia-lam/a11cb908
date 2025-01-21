@@ -55,6 +55,7 @@ header svg {
   font-family: "Afacad Flux", serif;
   font-size: larger;
   padding: 1em 1em 1em 1em;
+  cursor: pointer;
 }
 
 .active {
