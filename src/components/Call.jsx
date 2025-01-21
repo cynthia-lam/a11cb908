@@ -47,8 +47,8 @@ const Call = ({ data, toggleArchive }) => {
       </div>
 
       <Modal isOpen={modalOpen} toggleModal={toggleModal} className='modal'>
-        <div className='modal-button'>
-          <button onClick={toggleModal}>X</button>
+        <div className='modal-button-container'>
+          <button onClick={toggleModal} className='modal-button'>X</button>
         </div>
         <br/>
         <div className='modal-children'>

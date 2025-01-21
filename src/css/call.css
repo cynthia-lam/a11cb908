@@ -73,9 +73,19 @@
   flex-direction: column;
 }
 
-.modal-button {
+.modal-button-container {
   display: flex;
   justify-content: flex-end;
+}
+
+.modal-button {
+  background: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal-button:hover {
+  background: rgba(128, 128, 128, 0.329);
 }
 
 .modal-children {
