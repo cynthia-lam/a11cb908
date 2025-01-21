@@ -113,18 +113,30 @@ const CallList = ({ filter }) => {
         </button>
       </div>
       <div className='call-list-content'>
+      {filteredCalls.length === 0 ? (
+        <p className="no-calls-message">
+          {filter === 'ActivityFeed'
+            ? "No active calls to display."
+            : "No archived calls to display."}
+        </p>
+      ) : (
         <ul>
-          {/* <button onClick={resetAll}>RESET</button> */}
           {filteredCalls.map((call) => (
-            <Call data={call} key={call.id} fetchCalls={fetchData} toggleArchive={toggleArchive} />
+            <Call
+              data={call}
+              key={call.id}
+              fetchCalls={fetchData}
+              toggleArchive={toggleArchive}
+            />
           ))}
         </ul>
-      </div>
+      )}
+    </div>
       <div className='footer'>
           <img src='/assets/foot-icon-1.png' className='footer-icon'/>
-          <img src='/assets/foot-icon-2.png' className='footer-icon'></img>
-          <img src='/assets/foot-icon-3.png' className='footer-icon'></img>
-          <img src='/assets/foot-icon-4.png' className='footer-icon'></img>
+          <img src='/assets/foot-icon-2.png' className='footer-icon'/>
+          <img src='/assets/foot-icon-3.png' className='footer-icon'/>
+          <img src='/assets/foot-icon-4.png' className='footer-icon'/>
       </div>
     </div>
   );

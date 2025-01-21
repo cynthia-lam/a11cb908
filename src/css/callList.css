@@ -102,3 +102,12 @@
   height: 30px;
   width: auto;
 }
+
+.no-calls-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Afacad Flux";
+  font-size: 20px;
+  color: #555555;
+}
