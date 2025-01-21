@@ -77,19 +77,31 @@
   flex-direction: column;
 }
 
-.modal-button-container {
+.modal-top {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: solid 1px;
+  padding-bottom: 10px;
 }
 
-.modal-button {
+.modal-X-button {
   background: none;
   border: none;
   border-radius: 5px;
+  height: 34px;
+  width: auto;
+  background: rgba(128, 128, 128, 0.329);
 }
 
-.modal-button:hover {
-  background: rgba(128, 128, 128, 0.329);
+.modal-X-button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-X-button:hover {
+  background: rgba(128, 128, 128, 0.644);
 }
 
 .modal-children {

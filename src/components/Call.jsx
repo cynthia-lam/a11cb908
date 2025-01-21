@@ -20,7 +20,7 @@ const Call = ({ data, toggleArchive }) => {
     if (call_type === 'missed') return <img src='src/assets/missed-call.png' className='call-type-logo' />;
     if (call_type === 'answered') return <img src='src/assets/answered-call.png' className='call-type-logo' />;
     if (call_type === 'voicemail') return <img src='src/assets/voicemail-call.png' className='call-type-logo' />;
-  }
+  };
 
   return (
     <li onClick={toggleModal} className='call'>
@@ -51,13 +51,15 @@ const Call = ({ data, toggleArchive }) => {
       </div>
 
       <Modal isOpen={modalOpen} toggleModal={toggleModal} className='modal'>
-        <div className='modal-button-container'>
-        <div>{displayCallType()}</div>
-          <button onClick={toggleModal} className='modal-button'>X</button>
+        <div className='modal-top'>
+          <div>{displayCallType()}</div>
+          <div className='modal-X-button-container'>
+            <button onClick={toggleModal} className='modal-X-button'>X</button>
+          </div>
         </div>
-        <br/>
+        <br />
         <div className='modal-children'>
-          
+
           <div>#{id}</div>
           <div>{created_at.slice(0, 10)} | {`${Math.floor(duration / 60)}m ${duration % 60}s`}</div>
           <div>{direction.charAt(0).toUpperCase() + direction.slice(1)} call with {from} </div>
