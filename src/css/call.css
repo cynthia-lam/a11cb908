@@ -19,6 +19,10 @@
   list-style-type: none;
 }
 
+.call:hover {
+  background-color: rgba(187, 187, 187, 0.141);
+}
+
 .call-info-container {
   display: flex;
   flex-direction: column;
