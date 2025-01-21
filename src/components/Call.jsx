@@ -46,18 +46,22 @@ const Call = ({ data, toggleArchive }) => {
         </button>
       </div>
 
-      <Modal isOpen={modalOpen} toggleModal={toggleModal}>
-        <button onClick={toggleModal}>X</button>
-        <br />
-        <div>ID: {id}</div>
-        <div>Created At: {created_at}</div>
-        <div>Direction: {direction}</div>
-        <div>From: {from}</div>
-        <div>To: {to}</div>
-        <div>Via: {via}</div>
-        <div>Duration: {duration}</div>
-        <div>Is Archived: {is_archived ? 'Yes' : 'No'}</div>
-        <div>Call Type: {call_type}</div>
+      <Modal isOpen={modalOpen} toggleModal={toggleModal} className='modal'>
+        <div className='modal-button'>
+          <button onClick={toggleModal}>X</button>
+        </div>
+        <br/>
+        <div className='modal-children'>
+          <div>ID: {id}</div>
+          <div>Created At: {created_at}</div>
+          <div>Direction: {direction}</div>
+          <div>From: {from}</div>
+          <div>To: {to}</div>
+          <div>Via: {via}</div>
+          <div>Duration: {duration}</div>
+          <div>Is Archived: {is_archived ? 'Yes' : 'No'}</div>
+          <div>Call Type: {call_type}</div>
+        </div>
       </Modal>
     </li>
   );
