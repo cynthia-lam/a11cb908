@@ -63,9 +63,9 @@ const CallList = ({ filter }) => {
   // Reset all calls to initial state
   const resetAll = async () => {
     try {
-      const response = await fetch (`${baseURL}/reset`, {
+      const response = await fetch(`${baseURL}/reset`, {
         method: 'PATCH'
-      })
+      });
       if (response.ok) {
         console.log("Calls successfully reset!");
         fetchData();
@@ -74,7 +74,7 @@ const CallList = ({ filter }) => {
       }
     } catch (error) {
       console.log('Error reseting calls: ', error);
-      
+
     }
   };
 
@@ -90,13 +90,17 @@ const CallList = ({ filter }) => {
 
   return (
     <div className='call-list'>
-      <button onClick={archiveAll}>{filter === 'ActivityFeed' ? 'ARCHIVE ALL' : 'UNARCHIVE ALL'}</button>
-      <ul>
-        {/* <button onClick={resetAll}>RESET</button> */}
-        {filteredCalls.map((call) => (
-          <Call data={call} key={call.id} fetchCalls={fetchData} toggleArchive={toggleArchive} />
-        ))}
-      </ul>
+      <div className='call-list-top'>
+        <button className='archive-all-button' onClick={archiveAll}>{filter === 'ActivityFeed' ? 'ARCHIVE ALL' : 'UNARCHIVE ALL'}</button>
+      </div>
+      <div className='call-list-bottom'>
+        <ul>
+          {/* <button onClick={resetAll}>RESET</button> */}
+          {filteredCalls.map((call) => (
+            <Call data={call} key={call.id} fetchCalls={fetchData} toggleArchive={toggleArchive} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

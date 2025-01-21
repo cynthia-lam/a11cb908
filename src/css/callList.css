@@ -11,6 +11,19 @@
 }
 
 .call-list {
+  display: flex;
+  flex-direction: column;
   height: 586px;
   overflow-y: auto;
+}
+
+.call-list-top {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+
+.archive-all-button {
+  margin-top: 16px;
+  margin-right: 17px;
 }
