@@ -116,7 +116,7 @@ const CallList = ({ filter }) => {
       {filteredCalls.length === 0 ? (
         <p className="no-calls-message">
           {filter === 'ActivityFeed'
-            ? "No active calls to display."
+            ? "No recent calls to display."
             : "No archived calls to display."}
         </p>
       ) : (
