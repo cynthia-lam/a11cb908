@@ -31,8 +31,9 @@ You can select a call to view more details
 ## Next Steps
 
 If given more time, I would love to:
-- Implement all the tabs (footer is currently just a skeleton)
 - Implement the return-to-top button
+- Implement all the tabs (footer is currently just a skeleton)
+- Clean up components by moving functions to another file or a custom hook
 - Really hone in on a theme/colour scheme including cohesive logos
 - Improve the overall look of the modal
 
