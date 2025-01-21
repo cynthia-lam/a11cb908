@@ -18,14 +18,28 @@ const Call = ({ data, toggleArchive }) => {
 
   return (
     <li onClick={toggleModal} className='call'>
-      {call_type} call from {from}
-      {direction}
-      {duration}
-      
+      <div className='call-info-container'>
+        <div className='call-type'>
+          {call_type === 'missed' && <img src='src/assets/missed-call.png' className='call-type-logo'></img>}
+          {call_type === 'answered' && <img src='src/assets/answered-call.png' className='call-type-logo'></img>}
+          {call_type === 'voicemail' && <img src='src/assets/voicemail-call.png' className='call-type-logo'></img>}
+        </div>
+        <div className='call-direction'>
+          {direction === 'inbound' && <span>from</span>}
+          {direction === 'outbound' && <span>to</span>}
+        </div>
+        <div className='call-to'>
+          {to}
+        </div>
+        <div className='call-duration'>
+        Duration: {duration}
+        </div>
+      </div>
+
       <div className='buttons-container'>
-      <button onClick={toggleModal}>DETAILS</button>
-      |
-      <button onClick={handleToggleArchive}>{is_archived ? 'UNARCHIVE' : 'ARCHIVE'}</button>
+        <button onClick={toggleModal}>DETAILS</button>
+        |
+        <button onClick={handleToggleArchive}>{is_archived ? 'UNARCHIVE' : 'ARCHIVE'}</button>
       </div>
 
       <Modal isOpen={modalOpen} toggleModal={toggleModal}>

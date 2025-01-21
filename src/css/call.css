@@ -16,7 +16,19 @@
   list-style-type: none;
 }
 
+.call-info-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.call-type-logo {
+  width: 36px;
+  height: auto;
+}
+
 .buttons-container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
