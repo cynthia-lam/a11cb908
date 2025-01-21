@@ -1,0 +1,22 @@
+.call {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 4em;
+
+  border: .5px;
+  border-style: solid;
+  border-color: rgb(185, 185, 185);
+  border-radius: 5px;
+
+  padding: 1em 1em 1em 1em;
+  margin: 1em 1em 1em 1em;
+
+  list-style-type: none;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+}

@@ -17,19 +17,17 @@ const Call = ({ data, toggleArchive }) => {
   };
 
   return (
-    <li onClick={toggleModal}>
+    <li onClick={toggleModal} className='call'>
       {call_type} call from {from}
       {direction}
       {duration}
-      is it archived? {is_archived}
-      <button
-        onClick={toggleModal}>
-        DETAILS
-      </button>
-      <button
-        onClick={handleToggleArchive}>
-        {is_archived ? 'UNARCHIVE' : 'ARCHIVE'}
-      </button>
+      
+      <div className='buttons-container'>
+      <button onClick={toggleModal}>DETAILS</button>
+      |
+      <button onClick={handleToggleArchive}>{is_archived ? 'UNARCHIVE' : 'ARCHIVE'}</button>
+      </div>
+
       <Modal isOpen={modalOpen} toggleModal={toggleModal}>
         <button onClick={toggleModal}>X</button>
         <br />
