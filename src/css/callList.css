@@ -49,3 +49,12 @@
   height: auto;
   opacity: .6;
 }
+
+/* .test-footer {
+  position: static;
+  z-index: 1; 
+  background-color: #f0f0f0; 
+  text-align: center;
+  padding: 10px; 
+  border-top: 1px solid #ddd;
+} */

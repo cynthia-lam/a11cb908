@@ -35,9 +35,6 @@ const Header = (props) => {
           Archive
         </div>
       </div>
-      {/* <div className='nav-right'>
-        hi Speer team :)
-      </div> */}
     </header>
   );
 };
