@@ -39,32 +39,19 @@
   border-bottom: 1px solid #ddd;
 }
 
-.footer {
-  position: sticky;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-  background-color: white; 
-  padding: 10px; 
-  border-bottom: 1px solid #ddd;
-
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .archive-all-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  
   margin-top: 16px;
   margin-right: 17px;
-
+  
   border: .5px;
   border-style: solid;
   border-color: rgb(185, 185, 185);
   border-radius: 5px;
-
+  
   background: none;
   font-family: "Afacad Flux";
 }
@@ -77,17 +64,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  
   height: 21px;
   width: auto;
-
+  
   margin-top: 16px;
   margin-right: 17px;
   padding-left: 10px;
-
+  
   background: none;
   font-family: "Afacad Flux";
-
+  
   opacity: .75;
 }
 
@@ -95,4 +82,23 @@
   width: 22px;
   height: auto;
   opacity: .6;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  background-color: white; 
+  padding: 10px; 
+  border-top: 1px solid #ddd;
+  height: 40px;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-icon {
+  height: 30px;
+  width: auto;
 }
