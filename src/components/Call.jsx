@@ -25,12 +25,9 @@ const Call = ({ data, toggleArchive }) => {
             {call_type === 'answered' && <img src='src/assets/answered-call.png' className='call-type-logo' />}
             {call_type === 'voicemail' && <img src='src/assets/voicemail-call.png' className='call-type-logo' />}
           </div>
-          <div className='call-direction'>
+          <div className='call-to-from'>
             {direction === 'inbound' && <span>from</span>}
-            {direction === 'outbound' && <span>to</span>}
-          </div>
-          <div className='call-to'>
-            {to}
+            {direction === 'outbound' && <span>to</span>} {to}
           </div>
         </div>
         <div className='call-info-bottom'>

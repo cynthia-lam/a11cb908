@@ -53,6 +53,10 @@
   background: none;
 }
 
+.call-action-logo:hover {
+  opacity: 1;
+}
+
 .actions-container {
   display: flex;
   justify-content: space-around;
