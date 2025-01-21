@@ -1,6 +1,12 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'build'), // Ensure this matches the expected 'build' directory
+    filename: 'bundle.js',
+  },
   module: {
     rules: [
       {
