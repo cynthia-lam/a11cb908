@@ -95,18 +95,18 @@ const CallList = ({ filter }) => {
   return (
     <div className='call-list'>
       <div className='call-list-top'>
-        <img src='src/assets/scroll-top.png' className="scroll-top-button"></img>
+        <img src='public/assets/scroll-top.png' className="scroll-top-button"></img>
         <button
           className='archive-all-button'
           onClick={archiveAll}>
           {filter === 'ActivityFeed' ?
             <>
-              <img src="src/assets/archive.png" className="call-action-all-logo" />
+              <img src="public/assets/archive.png" className="call-action-all-logo" />
               ALL
             </>
             :
             <>
-              <img src="src/assets/unarchive.png" className="call-action-all-logo" />
+              <img src="public/assets/unarchive.png" className="call-action-all-logo" />
               ALL
             </>
           }
@@ -121,10 +121,10 @@ const CallList = ({ filter }) => {
         </ul>
       </div>
       <div className='footer'>
-          <img src='src/assets/foot-icon-1.png' className='footer-icon'></img>
-          <img src='src/assets/foot-icon-2.png' className='footer-icon'></img>
-          <img src='src/assets/foot-icon-3.png' className='footer-icon'></img>
-          <img src='src/assets/foot-icon-4.png' className='footer-icon'></img>
+          <img src='public/assets/foot-icon-1.png' className='footer-icon'></img>
+          <img src='public/assets/foot-icon-2.png' className='footer-icon'></img>
+          <img src='public/assets/foot-icon-3.png' className='footer-icon'></img>
+          <img src='public/assets/foot-icon-4.png' className='footer-icon'></img>
       </div>
     </div>
   );
