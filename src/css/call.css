@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
 
-  height: 4em;
+  height: 3em;
 
   border: .5px;
   border-style: solid;
@@ -12,6 +12,9 @@
 
   padding: 1em 1em 1em 1em;
   margin: 1em 1em 1em 1em;
+
+  font-family: "Afacad Flux";
+  font-size: medium;
 
   list-style-type: none;
 }
