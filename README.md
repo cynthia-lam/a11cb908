@@ -36,6 +36,8 @@ If given more time, I would love to:
 - Clean up components by moving functions to another file or a custom hook
 - Really hone in on a theme/colour scheme including cohesive logos
 - Improve the overall look of the modal
+- Unfortunately I am having issues with Netlify rendering images - after much sweat and tears shed, I would love to ask a mentor/Senior for some help!
+![netlify](previews/netlify-error.PNG)
 
 ## Acknowledgements
 
