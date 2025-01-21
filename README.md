@@ -1,20 +1,13 @@
 ## Welcome to Cynthia's version of Aircall!
 
+This is the Front End Development Challenge from Speer Technologies.
+
 The goal of this test was to implement a small ReactJS app with the following features:
 - **Activity Feed** - simple list of calls
 - **Activity Detail** - detail of a call
 - **Archive** - the final user should be able to archive (and unarchive) a call. Archived calls will no longer be displayed on the Activity Feed and should have a separate Archived Tab.
 - A button to archive all calls in the activity feed
 - A button to unarchive all calls in the archived calls tab
-
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Screenshots](#screenshots)
-- [Next Steps](#next-steps)
-- [Acknowledgements](#acknowledgements)
-
 
 ## Installation
 
@@ -26,8 +19,14 @@ npm start
 
 ## Screenshots
 
-At the moment, there is no landing page. When you launch the app, you will start in the Activity Feed:
-![alt text](image-1.png)
+At the moment, there is no landing page. When you launch the app, you will start in the Activity Feed
+![activity feed](previews/landing-screen.PNG)
+
+The archive tab
+![archive tab](previews/archive-tab.PNG)
+
+You can select a call to view more details
+![modal](previews/modal.PNG)
 
 ## Next Steps
 
